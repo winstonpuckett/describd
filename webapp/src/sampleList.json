@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1234",
+        "listName": "Grocery List",
+        "contributors": [
+            {
+                "id": "bobby.puckett@example.com",
+                "permissions": [
+                    "listReader",
+                    "userManager",
+                    "recordStateChanger",
+                    "recordAdder"
+                ]
+            },
+            {
+                "id": "amy.puckett@example.com",
+                "permissions": [
+                    "listReader",
+                    "userManager",
+                    "recordStateChanger",
+                    "recordAdder"
+                ]
+            }
+        ],
+        "records": [
+            {
+                "title": "Milk",
+                "note": "2% Fred Meyer",
+                "value": {
+                    "highlighted": null,
+                    "label": null,
+                    "percent": 0.5,
+                    "number": null
+                }
+            },
+            {
+                "title": "Eggs",
+                "note": "Organic Large Brown",
+                "value": {
+                    "highlighted": null,
+                    "label": null,
+                    "percent": null,
+                    "number": 3
+                }
+            },
+            {
+                "title": "Shampoo",
+                "note": "Bobby's Shampoo",
+                "value": {
+                    "highlighted": true,
+                    "label": null,
+                    "percent": null,
+                    "number": null
+                }
+            }
+        ]
+    }
+]

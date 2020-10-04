@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>describd</title>
+
+    <!-- import fast.design -->
+    <script type="module" src="https://unpkg.com/@microsoft/fast-components"></script>
+</head>
+
+<body>
+    <style>
+        :not(:defined) { display: none; }
+        body { margin: 0; padding: 0; }
+        fast-design-system-provider { min-height: 100%; }
+    </style>
+
+    <fast-design-system-provider use-defaults>
+</fast-design-system-provider>
+
+<script>
+    (async function () {
+        window.addEventListener('load', async (ev) => {
+            let getLists = async () => {
+                const listResponse = await fetch('/sampleList.json');
+                const listJson = await listResponse.json();
+                return listJson;
+            }
+            const lists = await getLists();
+    
+            const $app = document.querySelector('fast-design-system-provider')
+            for (const entry of lists) {
+                const $card = document.createElement('fast-anchor')
+                $card.innerHTML = entry.listName
+                $card.href = `/lists?id=${entry.id}`
+                $app.appendChild($card)
+            }
+        })
+    })()
+</script>
+    
+</body>
+
+</html>
